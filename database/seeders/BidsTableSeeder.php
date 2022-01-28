@@ -19,9 +19,7 @@ class BidsTableSeeder extends Seeder
     public function run()
     {
      
-        Bid::factory()
-        ->count(10)
-        ->create(); 
+        Bid::factory(10)->create();
      
     }
 }

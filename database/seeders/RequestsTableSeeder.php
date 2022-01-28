@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Factories\Sequence;
+use App\Models\Request;
 use Illuminate\Database\Seeder;
 
-class UsersTableSeeder extends Seeder
+class RequestsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +14,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)->create();
-        
+        Request::factory(10)->create();
     }
 }

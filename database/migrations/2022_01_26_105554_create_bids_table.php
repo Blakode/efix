@@ -21,8 +21,8 @@ class CreateBidsTable extends Migration
             $table->enum('artisan_status', ['pending', 'completed'])->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('request_id')->unsigned();
-            $table->foreign('request_id')->references('id')->on('requests')->onDelete('cascade'); 
             $table->unsignedBigInteger('user_id')->unsigned();
+            $table->foreign('request_id')->references('id')->on('requests')->onDelete('cascade'); 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); 
              
         });

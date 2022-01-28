@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Bid extends Model
 {
     use HasFactory;
-    protected $fillable = ['message', 'client_status', 'artisan_staus','user_id', 'request_id']; 
+    protected $fillable = ['message', 'client_status', 'artisan_status','user_id', 'request_id']; 
 
     public function request()
     {

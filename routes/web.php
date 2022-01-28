@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //lazy loading
+    return  \App\Models\User::with('request')->get();
 });
