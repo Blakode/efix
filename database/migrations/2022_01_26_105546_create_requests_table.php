@@ -21,7 +21,6 @@ class CreateRequestsTable extends Migration
             $table->string('image_url');
             $table->string('location');
             $table->decimal('price', 8,2); 
-            
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); 
             
