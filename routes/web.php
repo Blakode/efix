@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     //lazy loading
-    return  \App\Models\User::with('request')->get();
+    return [
+        'user' => \App\Models\User::with('request','bid','transaction')->get(),
+        'request' => \App\Models\Request::with('user','bid')->get(),
+        'transaction' => \App\Models\Transaction::with('user','bid')->get(),
+        'bid' => \App\Models\Bid::with('request','user','transaction')->get(),
+    ];
 });
+//bid request, transaction & user
+//transaction load rel(user,bid)
